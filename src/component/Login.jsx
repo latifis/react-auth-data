@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/Auth.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ const Login = () => {
     console.log(email);
   };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="auth-form-container">
@@ -36,8 +37,14 @@ const Login = () => {
         />
         <button type="submit">Log In</button>
       </form>
-      <button className="link-btn" onClick={() => navigate('/register')}>
-        Don't have an account? Register here.
+      <button className="link-btn-up">
+        Don't have an account?{" "}
+        <span
+          className="link-btn clickable-text"
+          onClick={() => navigate("/register")}
+        >
+          Register here.
+        </span>
       </button>
     </div>
   );

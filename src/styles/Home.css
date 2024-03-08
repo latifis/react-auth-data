@@ -1,0 +1,62 @@
+/* Overall container styling */
+.home-container {
+    width: 800px; /* Adjust as needed */
+    margin: 40px auto 0;
+  }
+  
+  /* Search bar styling */
+  .home-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /* Table styling */
+  .home-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .home-container table thead th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .home-container table tbody td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Button styling */
+  .home-container table tbody td button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .home-container table tbody td button:hover {
+    background-color: #eee;
+  }
+  
+  /* Specific button styles (optional) */
+  .home-container table tbody td button.view {
+    background-color: #007bff; /* Blue */
+    color: #fff;
+  }
+  
+  .home-container table tbody td button.edit {
+    background-color: #ffc107; /* Orange */
+    color: #000;
+  }
+  
+  .home-container table tbody td button.delete {
+    background-color: #dc3545; /* Red */
+    color: #fff;
+  }

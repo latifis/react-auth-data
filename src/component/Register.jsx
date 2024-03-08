@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import "../styles/Auth.css";
+import { useNavigate } from "react-router-dom";
 
 const Register = (props) => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [name, setName] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,14 +17,15 @@ const Register = (props) => {
   return (
     <div className="auth-form-container">
       <h2>Register</h2>
-      <form className="register-form" onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="name">Full name</label>
         <input
           value={name}
-          name="name"
           onChange={(e) => setName(e.target.value)}
+          type="email"
+          placeholder="your full name"
           id="name"
-          placeholder="full Name"
+          name="name"
         />
         <label htmlFor="email">email</label>
         <input
@@ -42,8 +47,14 @@ const Register = (props) => {
         />
         <button type="submit">Log In</button>
       </form>
-      <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
-        Already have an account? Login here.
+      <button className="link-btn-up">
+        Already have an account?{" "}
+        <span
+          className="link-btn clickable-text"
+          onClick={() => navigate("/login")}
+        >
+          Login here.
+        </span>
       </button>
     </div>
   );
