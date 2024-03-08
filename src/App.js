@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Login from "./component/Login";
 import Register from "./component/Register";
@@ -8,12 +8,6 @@ import NotFound from "./component/NotFound";
 import Form from "./component/Form";
 
 function App() {
-  const [currentForm, setCurrentForm] = useState("login");
-
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-  };
-
   return (
     <Router>
       <Routes>
