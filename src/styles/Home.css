@@ -1,62 +1,65 @@
-/* Overall container styling */
 .home-container {
-    width: 800px; /* Adjust as needed */
-    margin: 40px auto 0;
-  }
-  
-  /* Search bar styling */
-  .home-container input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  /* Table styling */
-  .home-container table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .home-container table thead th {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
-    font-weight: bold;
-  }
-  
-  .home-container table tbody td {
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  /* Button styling */
-  .home-container table tbody td button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  .home-container table tbody td button:hover {
-    background-color: #eee;
-  }
-  
-  /* Specific button styles (optional) */
-  .home-container table tbody td button.view {
-    background-color: #007bff; /* Blue */
-    color: #fff;
-  }
-  
-  .home-container table tbody td button.edit {
-    background-color: #ffc107; /* Orange */
-    color: #000;
-  }
-  
-  .home-container table tbody td button.delete {
-    background-color: #dc3545; /* Red */
-    color: #fff;
-  }
+  display: flex; /* Center elements horizontally */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Horizontally center content */
+  margin: 2rem auto; /* Add some margin for spacing */
+  width: 80%; /* Set a reasonable maximum width */
+  max-width: 600px; /* Adjust for responsiveness */
+}
+
+h2 {
+  font-size: 2rem; /* Increase heading size */
+  margin-bottom: 1rem; /* Add some space after heading */
+  text-align: center; /* Center the heading text */
+}
+
+input[type="text"] {
+  padding: 0.5rem 1rem; /* Adjust padding for better look */
+  border: 1px solid #ccc; /* Add a subtle border */
+  border-radius: 4px; /* Round corners for a softer look */
+  margin-bottom: 1rem; /* Add space after the search bar */
+  width: 100%; /* Make the search bar fill the available space */
+}
+
+table {
+  border-collapse: collapse; /* Ensure proper border rendering */
+  width: 100%; /* Make the table fill the container */
+}
+
+th, td {
+  padding: 0.75rem 1rem; /* Adjust cell padding for readability */
+  border: 1px solid #ddd; /* Add thin table borders */
+  text-align: left; /* Left-align content for clarity */
+}
+
+th {
+  background-color: #f2f2f2; /* Light background for headers */
+  font-weight: bold; /* Bold text for emphasis */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row colors for better readability */
+}
+
+button {
+  padding: 0.5rem 1rem; /* Adjust button padding */
+  border: none; /* Remove default button border */
+  border-radius: 4px; /* Round corners for a better look */
+  cursor: pointer; /* Indicate clickable behavior */
+  margin-right: 0.5rem; /* Add some space between buttons */
+}
+
+.view-button {
+  background-color: #3498db; /* Blue for viewing */
+  color: white; /* White text for contrast */
+}
+
+.edit-button {
+  background-color: #f39c12; /* Orange for editing */
+  color: white; /* White text for contrast */
+}
+
+.delete-button {
+  background-color: #e74c3c; /* Red for deleting */
+  color: white; /* White text for contrast */
+}

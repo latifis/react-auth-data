@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Home.css";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [dataNotFound, setDataNotFound] = useState(false);
   const [data, setData] = useState([
     { id: 1, name: "Budi Santoso", age: 30 },
     { id: 2, name: "Ani Lestari", age: 25 },
@@ -35,13 +36,25 @@ const Home = () => {
   );
 
   const handleDelete = (id) => {
-    // Implement delete logic here
+    // Implement actual delete logic here (e.g., using a confirmation prompt)
     console.log("Delete item with ID:", id);
   };
 
+  useEffect(() => {
+    const filteredData = data.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  
+    if (filteredData.length === 0) {
+      setDataNotFound(true);
+    } else {
+      setDataNotFound(false);
+    }
+  }, [searchTerm, data]);
+
   return (
     <div className="home-container">
-      <h2>Home</h2>
+      <h2>Data Management</h2> {/* More descriptive heading */}
       <input
         type="text"
         placeholder="Search by name"
@@ -58,28 +71,35 @@ const Home = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredData.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.age}</td>
-              <td>
-                <button
-                  onClick={() => console.log("View item with ID:", item.id)}
-                >
-                  View
-                </button>
-                <button
-                  onClick={() => console.log("Edit item with ID:", item.id)}
-                >
-                  Edit
-                </button>
-                <button onClick={() => handleDelete(item.id)}>Delete</button>
+          {filteredData.length > 0 ? (
+            filteredData.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.age}</td>
+                <td>
+                  <button className="view-button">View</button>
+                  <button className="edit-button">Edit</button>
+                  <button
+                    className="delete-button"
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="4" className="text-center">
+                <p>Data Not Found</p>
               </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
+      <button className="add-button">Add New</button>{" "}
+      {/* New button to add data */}
     </div>
   );
 };
