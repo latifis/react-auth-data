@@ -27,6 +27,10 @@ const Home = () => {
     navigate(`/form/${id}`);
   };
 
+  const navigateToDetail = (id) => {
+    navigate(`/detail/${id}`);
+  };
+
   useEffect(() => {
     const filteredData = data.filter((item) =>
       item.nama.toLowerCase().includes(searchTerm.toLowerCase())
@@ -67,11 +71,16 @@ const Home = () => {
                 <td>
                   <button
                     className="view-button"
-                    onClick={() => navigateToForm(item.id)}
+                    onClick={() => navigateToDetail(item.id)}
                   >
                     View
                   </button>
-                  <button className="edit-button">Edit</button>
+                  <button
+                    className="edit-button"
+                    onClick={() => navigateToForm(item.id)}
+                  >
+                    Edit
+                  </button>
                   <button
                     className="delete-button"
                     onClick={() => handleDelete(item.id)}
