@@ -15,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/form" element={<Form />}></Route>
+        <Route path="/form/:id" element={<Form />} />
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </Router>

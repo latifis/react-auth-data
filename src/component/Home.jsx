@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Home.css";
-import dataJson from "../utils/data.json"
+import dataJson from "../utils/data.json";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [dataNotFound, setDataNotFound] = useState(false);
   const [data, setData] = useState(dataJson);
+
+  const navigate = useNavigate();
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -18,6 +21,10 @@ const Home = () => {
   const handleDelete = (id) => {
     // Implement actual delete logic here (e.g., using a confirmation prompt)
     console.log("Delete item with ID:", id);
+  };
+
+  const navigateToForm = (id) => {
+    navigate(`/form/${id}`);
   };
 
   useEffect(() => {
@@ -34,7 +41,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h2>Data Management</h2> {/* More descriptive heading */}
+      <h2>Data Management</h2>
       <input
         type="text"
         placeholder="Search by name"
@@ -58,7 +65,12 @@ const Home = () => {
                 <td>{item.nama}</td>
                 <td>{item.umur}</td>
                 <td>
-                  <button className="view-button">View</button>
+                  <button
+                    className="view-button"
+                    onClick={() => navigateToForm(item.id)}
+                  >
+                    View
+                  </button>
                   <button className="edit-button">Edit</button>
                   <button
                     className="delete-button"
