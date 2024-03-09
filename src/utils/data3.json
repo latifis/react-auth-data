@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "nama": "Budi Santoso",
+        "umur": 30
+    },
+    {
+        "id": 2,
+        "nama": "Ani Lestari",
+        "umur": 25
+    },
+    {
+        "id": 3,
+        "nama": "Candra Gunawan",
+        "umur": 35
+    },
+    {
+        "id": 4,
+        "nama": "Dian Pratiwi",
+        "umur": 28
+    },
+    {
+        "id": 5,
+        "nama": "Eko Supriyanto",
+        "umur": 40
+    },
+    {
+        "id": 6,
+        "nama": "Fitriana Dewi",
+        "umur": 22
+    },
+    {
+        "id": 7,
+        "nama": "Galih Pratama",
+        "umur": 32
+    },
+    {
+        "id": 8,
+        "nama": "Hendra Saputra",
+        "umur": 29
+    },
+    {
+        "id": 9,
+        "nama": "Ira Puspita",
+        "umur": 38
+    },
+    {
+        "id": 10,
+        "nama": "Joko Widodo",
+        "umur": 61
+    },
+    {
+        "id": 11,
+        "nama": "Kirana Wati",
+        "umur": 24
+    },
+    {
+        "id": 12,
+        "nama": "Lintang Kirana",
+        "umur": 33
+    },
+    {
+        "id": 13,
+        "nama": "Maman Suherman",
+        "umur": 45
+    },
+    {
+        "id": 14,
+        "nama": "Nina Agustina",
+        "umur": 27
+    },
+    {
+        "id": 15,
+        "nama": "Oki Dwi Saputra",
+        "umur": 36
+    },
+    {
+        "id": 16,
+        "nama": "Putri Andini",
+        "umur": 21
+    },
+    {
+        "id": 17,
+        "nama": "Rian Saputra",
+        "umur": 31
+    },
+    {
+        "id": 18,
+        "nama": "Siska Amelia",
+        "umur": 26
+    },
+    {
+        "id": 19,
+        "nama": "Taufik Hidayat",
+        "umur": 34
+    },
+    {
+        "id": 20,
+        "nama": "Utami Dewi",
+        "umur": 42
+    }
+]
