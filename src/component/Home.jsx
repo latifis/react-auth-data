@@ -19,7 +19,6 @@ const Home = () => {
   );
 
   const handleDelete = (id) => {
-    // Implement actual delete logic here (e.g., using a confirmation prompt)
     console.log("Delete item with ID:", id);
   };
 
@@ -100,7 +99,6 @@ const Home = () => {
         </tbody>
       </table>
       <button className="add-button">Add New</button>{" "}
-      {/* New button to add data */}
     </div>
   );
 };

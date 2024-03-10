@@ -6,9 +6,9 @@ import "../styles/Detail.css";
 const Detail = () => {
   const { id } = useParams();
   const item = dataJson.find((item) => item.id === parseInt(id));
-  
+
   const navigate = useNavigate();
-  
+
   const navigateToDetail = (id) => {
     navigate(`/`);
   };
@@ -39,7 +39,11 @@ const Detail = () => {
           </ul>
         </div>
       </div>
-      <button type="button" className="back-button" onClick={() => navigateToDetail(item.id)}>
+      <button
+        type="button"
+        className="back-button"
+        onClick={() => navigateToDetail(item.id)}
+      >
         back
       </button>
     </div>

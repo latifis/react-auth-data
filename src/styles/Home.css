@@ -26,7 +26,8 @@ table {
   width: 100%; /* Make the table fill the container */
 }
 
-th, td {
+th,
+td {
   padding: 0.75rem 1rem; /* Adjust cell padding for readability */
   border: 1px solid #ddd; /* Add thin table borders */
   text-align: left; /* Left-align content for clarity */
