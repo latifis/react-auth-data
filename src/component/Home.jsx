@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/Home.css";
 import dataJson from "../utils/data.json";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [dataNotFound, setDataNotFound] = useState(false);
-  const [data, setData] = useState(dataJson);
 
   const navigate = useNavigate();
 
@@ -14,7 +12,7 @@ const Home = () => {
     setSearchTerm(e.target.value);
   };
 
-  const filteredData = data.filter((item) =>
+  const filteredData = dataJson.filter((item) =>
     item.nama.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -30,39 +28,28 @@ const Home = () => {
     navigate(`/detail/${id}`);
   };
 
-  useEffect(() => {
-    const filteredData = data.filter((item) =>
-      item.nama.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    if (filteredData.length === 0) {
-      setDataNotFound(true);
-    } else {
-      setDataNotFound(false);
-    }
-  }, [searchTerm, data]);
-
   return (
     <div className="home-container">
       <h2>Data Management</h2>
+      <button className="add-button">Add New</button>{" "}
       <input
         type="text"
         placeholder="Search by name"
         value={searchTerm}
         onChange={handleSearchChange}
       />
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredData.length > 0 ? (
-            filteredData.map((item) => (
+      {filteredData.length > 0 ? (
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredData.map((item) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.nama}</td>
@@ -88,17 +75,12 @@ const Home = () => {
                   </button>
                 </td>
               </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="4" className="text-center">
-                <p>Data Not Found</p>
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-      <button className="add-button">Add New</button>{" "}
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p className="text-not-found">Data Not Found</p>
+      )}
     </div>
   );
 };

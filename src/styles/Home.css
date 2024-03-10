@@ -51,7 +51,7 @@ button {
 }
 
 .view-button {
-  background-color: #3498db; /* Blue for viewing */
+  background-color: forestgreen; /* Blue for viewing */
   color: white; /* White text for contrast */
 }
 
@@ -63,4 +63,20 @@ button {
 .delete-button {
   background-color: #e74c3c; /* Red for deleting */
   color: white; /* White text for contrast */
+}
+
+.add-button {
+  margin-left: auto; /* Menempatkan tombol ke ujung kanan */
+  background-color: blue; /* Menyesuaikan warna latar belakang dengan warna yang diinginkan */
+  color: white; /* Menyesuaikan warna teks agar kontras */
+  border: none; /* Menghilangkan border */
+  padding: 8px 16px; /* Menyesuaikan padding */
+  cursor: pointer; /* Menyesuaikan cursor saat diarahkan ke tombol */
+}
+
+.text-not-found {
+  text-align: center; /* Menengahkan teks */
+  font-size: 18px; /* Menyesuaikan ukuran teks */
+  color: #666; /* Menyesuaikan warna teks */
+  margin-top: 20px; /* Menyesuaikan jarak dari atas */
 }
