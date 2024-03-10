@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <h2>Data Management</h2>
-      <button className="add-button">Add New</button>{" "}
+      <button className="add-button" onClick={() => navigate(`/add`)}>Add New</button>{" "}
       <input
         type="text"
         placeholder="Search by name"

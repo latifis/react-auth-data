@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NotFound from "./component/NotFound";
 import Form from "./component/Form";
 import Detail from "./component/Detail";
+import Add from "./component/Add";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/form/:id" element={<Form />} />
+        <Route path="/add" element={<Add />} />
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </Router>

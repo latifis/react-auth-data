@@ -3,33 +3,26 @@ import { useNavigate, useParams } from "react-router-dom";
 import dataJson from "../utils/data.json";
 import "../styles/Form.css";
 
-const Form = () => {
-  const { id } = useParams();
-  const item = dataJson.find((item) => item.id === parseInt(id));
-
+const Add = () => {
   const navigate = useNavigate();
+  const [tanggalLahirInput, setTanggalLahirInput] = useState("");
 
   const [formData, setFormData] = useState({
-    nama: item.nama,
-    tempat_lahir: item.tempat_lahir,
-    tanggal_lahir: item.tanggal_lahir,
-    umur: item.umur,
-    jenis_kelamin: item.jenis_kelamin,
-    alamat: item.alamat,
-    no_handphone: item.no_handphone,
-    email: item.email,
+    nama: "",
+    tempat_lahir: "",
+    tanggal_lahir: "",
+    umur: "",
+    jenis_kelamin: "",
+    alamat: "",
+    no_handphone: "",
+    email: "",
   });
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   alert("Data berhasil diubah!");
-  // };
 
   return (
     <div className="home-container">
       <div className="header">
         <h2>
-          Edit Data<h1>{item.nama}</h1>
+          Add Data
         </h2>
       </div>
       <form>
@@ -41,10 +34,12 @@ const Form = () => {
               type="text"
               id={key}
               name={key}
-              value={value}
+              value={key !== "umur" ? formData[key] : key === "tanggal_lahir" ? tanggalLahirInput : ""} 
               onChange={(e) => {
                 if (key !== "umur") {
                   setFormData({ ...formData, [key]: e.target.value });
+                } else if (key === "tanggal_lahir") {
+                  setTanggalLahirInput(e.target.value);
                 }
               }}
             />
@@ -58,4 +53,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Add;
