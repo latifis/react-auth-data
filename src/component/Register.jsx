@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Auth.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = (props) => {
   const [email, setEmail] = useState("");
@@ -47,15 +47,9 @@ const Register = (props) => {
         />
         <button type="submit">Log In</button>
       </form>
-      <button className="link-btn-up">
-        Already have an account?{" "}
-        <span
-          className="link-btn clickable-text"
-          onClick={() => navigate("/login")}
-        >
-          Login here.
-        </span>
-      </button>
+      <div className="go-regis">
+        Already have an account? <Link to="/">Login here.</Link>
+      </div>
     </div>
   );
 };

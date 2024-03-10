@@ -61,3 +61,9 @@
 .link-btn:hover {
   text-decoration: underline;
 }
+
+.go-regis {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}

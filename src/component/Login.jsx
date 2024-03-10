@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Auth.css";
 
 const Login = () => {
@@ -35,17 +35,13 @@ const Login = () => {
           id="password"
           name="password"
         />
-        <button type="submit">Log In</button>
+        <button type="submit" onClick={() => navigate(`/home`)}>
+          Log In
+        </button>
       </form>
-      <button className="link-btn-up">
-        Don't have an account?{" "}
-        <span
-          className="link-btn clickable-text"
-          onClick={() => navigate("/register")}
-        >
-          Register here.
-        </span>
-      </button>
+      <div className="go-regis">
+      Don't have an account? <Link to="/register">Register here.</Link>
+      </div>
     </div>
   );
 };

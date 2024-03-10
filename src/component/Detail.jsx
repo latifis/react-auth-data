@@ -10,7 +10,7 @@ const Detail = () => {
   const navigate = useNavigate();
 
   const navigateToDetail = (id) => {
-    navigate(`/`);
+    navigate(`/home`);
   };
 
   return (
