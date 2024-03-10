@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import dataJson from "../utils/data.json";
+import { useNavigate } from "react-router-dom";
 import "../styles/Form.css";
 
 const Add = () => {
